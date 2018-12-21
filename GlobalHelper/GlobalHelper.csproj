@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ExtensionMethods\ConvertExtensions.cs" />
+    <Compile Include="ExtensionMethods\CryptographyExtensions.cs" />
     <Compile Include="ExtensionMethods\DatabaseExtensions.cs" />
     <Compile Include="ExtensionMethods\DateTimeExtensions.cs" />
     <Compile Include="ExtensionMethods\FileSystemExtensions.cs" />

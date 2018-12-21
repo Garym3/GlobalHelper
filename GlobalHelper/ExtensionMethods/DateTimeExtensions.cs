@@ -102,5 +102,20 @@ namespace GlobalHelper.ExtensionMethods
             var years = Convert.ToInt32(Math.Floor((double)ts.Days / 365));
             return years <= 1 ? @"one year" : years + @" years";
         }
+
+        /// <summary>
+        /// Inserts a "0" character before the day and the month if they are strictly inferior to 10.
+        /// Example: 582017 => 05082017
+        /// </summary>
+        /// <param name="date">The DateTime object</param>
+        /// <returns>The new date in a string formatted as JJMMAAAA</returns>
+        public static string AddZeroInDate(DateTime date)
+        {
+            string day = date.Day < 10 ? "0" + date.Day : date.Day.ToString();
+            string month = date.Month < 10 ? "0" + date.Month : date.Month.ToString();
+            string year = date.Year.ToString();
+
+            return $"{day}{month}{year}";
+        }
     }
 }

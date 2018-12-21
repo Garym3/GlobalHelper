@@ -6,7 +6,7 @@ namespace GlobalHelper.ExtensionMethods
     public static class IterationExtensions
     {
         /// <summary>
-        /// Iterates through a strongly-typed list
+        /// Iterates through a strongly-typed IEnumerable
         /// </summary>
         /// <typeparam name="T">Generic type to specify</typeparam>
         /// <param name="list">The list</param>

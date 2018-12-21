@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Globalization;
 
 namespace GlobalHelper.ExtensionMethods
 {
@@ -20,6 +16,23 @@ namespace GlobalHelper.ExtensionMethods
             if (!int.TryParse(input, out result)) result = 0;
 
             return result;
+        }
+
+        /// <summary>
+        /// Parses a string and returns the string as a double if it can be converted to a double.
+        /// </summary>
+        /// <param name="str">The string to parse</param>
+        /// <param name="doubleToReturn">The double if found in the string</param>
+        /// <returns>The double if found in the string</returns>
+        public static bool ParseDouble(string str, out double? doubleToReturn)
+        {
+            double doubleValue;
+            bool isDouble = double.TryParse(str.Replace(",", "."), NumberStyles.AllowDecimalPoint, CultureInfo.InvariantCulture, out doubleValue);
+
+            if (isDouble) doubleToReturn = doubleValue;
+            else doubleToReturn = null;
+
+            return isDouble;
         }
     }
 }

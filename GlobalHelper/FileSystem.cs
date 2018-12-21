@@ -1,14 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace GlobalHelper
 {
     public static class FileSystem
     {
+        /// <summary>
+        /// Checks if the file in the path can be opened now
+        /// </summary>
+        /// <param name="filePath">Path of the file to check</param>
+        /// <returns>True if the file can be opened, else False</returns>
         public static bool IsFileReady(string filePath)
         {
             try
